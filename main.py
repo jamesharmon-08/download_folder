@@ -29,9 +29,9 @@ try:
     mkdir(join(DOWNLOADS,backup_folder))
 except FileExistsError:
     print("Folder exists")
-for dir in only_dirs:    # Move folders into a backup folder
-    if 'backup' != dir.split("-")[0]:  # move folders to back-up folder
+for folder in only_dirs:    # Move folders into a backup folder
+    if 'backup' != folder.split("-")[0]:  # move folders to back-up folder
         try:
-            rename(join(DOWNLOADS,dir),join(DOWNLOADS,backup_folder,dir))
+            rename(join(DOWNLOADS,folder),join(DOWNLOADS,backup_folder,folder))
         except PermissionError:
             print("Permission Error:  System or Hidden Folder")
